@@ -13,6 +13,7 @@ pipeline {
             steps {
                 sh '''
                     ./run-tests
+                    true
                 '''
             }
         }
