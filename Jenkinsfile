@@ -16,7 +16,18 @@ node {
                 """
             }
 
+            [
+                'plik1.txt',
+                'plik2.txt',
+                'plik3.txt',
+            ].each { zmienna ->
+                sh """
+                    echo aqq > ${zmienna}
+                """
+            }
+
             archiveArtifacts '**/artefakt.txt'
+            archiveArtifacts 'plik*.txt'
         }
         stage('Test') {
                 timeout(time: 15, unit: 'SECONDS') {
