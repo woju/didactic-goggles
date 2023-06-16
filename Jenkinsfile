@@ -9,7 +9,7 @@ node {
 
             if (env.JENKINS_URL == 'http://23.101.54.168/') {
                 sh '''
-                    echo tak, to ten jenkins (${JENKINS_URL})
+                    echo tak, to ten jenkins: ${JENKINS_URL}
                 '''
             } else {
                 sh """
