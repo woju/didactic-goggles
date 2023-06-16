@@ -29,5 +29,11 @@ pipeline {
                 echo ZAWSZE
             '''
         }
+        success {
+            sh 'curl https://xfd.woju.eu/0'
+        }
+        failure {
+            sh 'curl https://xfd.woju.eu/1'
+        }
     }
 }
