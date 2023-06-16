@@ -36,7 +36,6 @@ node {
                 sh 'false'
             } catch (exc) {
                 echo "catch"
-                throw
             }
 
             archiveArtifacts '**/artefakt.txt'
