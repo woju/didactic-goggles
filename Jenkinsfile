@@ -24,9 +24,6 @@ pipeline {
                 sh '''
                     curl -s https://example.org/ | grep -F '<title>'
                 '''
-                sh '''
-                    echo test hook 6
-                '''
             }
         }
     }
