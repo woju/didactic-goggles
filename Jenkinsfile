@@ -16,7 +16,7 @@ pipeline {
                     true
                 '''
                 sh '''
-                    echo poprawka3
+                    echo poprawka4
                 '''
             }
         }
