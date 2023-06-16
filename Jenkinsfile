@@ -3,8 +3,7 @@ node {
 
         stage('Build') {
             sh '''
-                # make
-                # make install DESTDIR=...
+                echo 123 > artefakt.txt
             '''
 
             if (env.JENKINS_URL == 'http://23.101.54.168/') {
@@ -16,6 +15,8 @@ node {
                     echo to nie ten jenkins: ${env.JENKINS_URL}
                 """
             }
+
+            archiveArtifacts '**/artefakt.txt'
         }
         stage('Test') {
                 timeout(time: 15, unit: 'SECONDS') {
