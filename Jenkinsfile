@@ -19,7 +19,6 @@ pipeline {
                     sh '''
                         ./run-tests
                         sleep 10
-
                     '''
                 }
                 sh '''
