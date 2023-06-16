@@ -13,7 +13,7 @@ node {
                 '''
             } else {
                 sh """
-                    echo to nie ten jenkins (${env.JENKINS_URL})
+                    echo to nie ten jenkins: ${env.JENKINS_URL}
                 """
             }
         }
