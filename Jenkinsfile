@@ -18,7 +18,7 @@ pipeline {
                     '''
                 }
                 sh '''
-                    echo test hook 3
+                    echo test hook 5
                 '''
             }
         }
