@@ -1,11 +1,21 @@
 node {
-	checkout scm
+    checkout scm
 
         stage('Build') {
+            sh '''
+                # make
+                # make install DESTDIR=...
+            '''
+
+            if (env.JENKINS_URL == 'http://23.101.54.168/') {
                 sh '''
-                    # make
-                    # make install DESTDIR=...
+                    echo tak, to ten jenkins (${JENKINS_URL})
                 '''
+            } else {
+                sh """
+                    echo to nie ten jenkins (${env.JENKINS_URL})
+                """
+            }
         }
         stage('Test') {
                 timeout(time: 15, unit: 'SECONDS') {
