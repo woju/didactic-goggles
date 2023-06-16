@@ -15,6 +15,9 @@ pipeline {
                     ./run-tests
                     true
                 '''
+                sh '''
+                    echo poprawka
+                '''
             }
         }
     }
