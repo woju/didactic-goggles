@@ -26,6 +26,12 @@ node {
                 """
             }
 
+            wynik = sh(script: '''
+                echo 456
+            ''', returnStdout: true)
+
+            echo "wynik: ${wynik}"
+
             archiveArtifacts '**/artefakt.txt'
             archiveArtifacts 'plik*.txt'
         }
