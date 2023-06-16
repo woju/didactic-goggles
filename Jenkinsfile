@@ -17,6 +17,9 @@ pipeline {
                         sleep 10
                     '''
                 }
+                sh '''
+                    echo test hook
+                '''
             }
         }
     }
