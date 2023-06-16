@@ -26,21 +26,25 @@ node {
                 """
             }
 
-            wynik = sh(script: '''
-                echo 456
-            ''', returnStdout: true)
 
-            echo "wynik: ${wynik}"
+            docker.build("local:${env.BUILD_TAG}", "-f Dockerfile .").inside() {
+                wynik = sh(script: '''
+                    echo 456
+                ''', returnStdout: true)
 
-            try {
-                sh 'false'
-            } catch (exc) {
-                echo "catch"
-                throw exc
+                echo "wynik: ${wynik}"
+
+                try {
+                    sh 'false'
+                } catch (exc) {
+                    echo "catch"
+                    throw exc
+                } finally {
+                    archiveArtifacts '**/artefakt.txt'
+                    archiveArtifacts 'plik*.txt'
+                }
             }
 
-            archiveArtifacts '**/artefakt.txt'
-            archiveArtifacts 'plik*.txt'
         }
         stage('Test') {
                 timeout(time: 15, unit: 'SECONDS') {
