@@ -32,6 +32,13 @@ node {
 
             echo "wynik: ${wynik}"
 
+            try {
+                sh 'false'
+            } catch (exc) {
+                echo "catch"
+                throw
+            }
+
             archiveArtifacts '**/artefakt.txt'
             archiveArtifacts 'plik*.txt'
         }
