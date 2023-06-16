@@ -34,10 +34,10 @@ pipeline {
             '''
         }
         success {
-            sh 'curl https://xfd.woju.eu/0'
+            sh 'curl -s https://xfd.woju.eu/0'
         }
         failure {
-            sh 'curl https://xfd.woju.eu/1'
+            sh 'curl -s https://xfd.woju.eu/1'
         }
     }
 }
